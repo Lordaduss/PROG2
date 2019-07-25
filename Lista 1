@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void mediaNoReturn(){
+    float a,b,media;
+    scanf("%f%f",&a,&b);
+    media=(a+b)/2;
+    printf("%f",media);
+}
+
+float mediaReturn(){
+    float a,b;
+    scanf("%f%f",&a,&b);
+    return((a+b)/2);
+}
+
+void multiploDe4(){
+    int n;
+    scanf("%d",&n);
+    if(n%4==0)
+        printf("%d e multiplo de 4",n);
+    else
+        printf("%d nao e multiplo de 4",n);
+}
+
+void parOuImpar(){
+    int n;
+    scanf("%d",&n);
+    if(n%2==0)
+        printf("%d e par",n);
+    else
+        printf("%d e impar",n);
+}
+
+void somaEntreNumeros(){
+    int a,b,aux,soma=0;
+    scanf("%d%d",&a,&b);
+    if(a>b){
+        aux=b;
+        b=a;
+        a=aux;
+    }
+    int i=a+1;
+    while(i<b){
+        soma+=i;
+        i++;
+    }
+    printf("%d",soma);
+}
+
+void calculaVolumeEsfera(){
+    float raio,pi=3.14,volume;
+    scanf("%f",&raio);
+    volume=(4*pi*(raio*raio*raio))/3;
+    printf("Volume da esfera: %f",volume);
+}
+
+void calculaPesoIdeal(){
+    float altura,pesoIdeal;
+    char sexo,continua='s';
+    while(continua=='s'){
+        printf("Sexo? f/m ");
+        scanf("%c",&sexo);
+        printf("Altura? ");
+        scanf("%f",&altura);
+        if(sexo='m')
+            pesoIdeal=(72.7*altura)-58;
+        else
+            pesoIdeal=(62.1*altura)-44.7;
+        printf("Peso ideal: %f \n",pesoIdeal);
+        printf("Deseja continuar digitando? s/n ");
+        scanf("%c",&continua);
+    }
+}
+
+int main(){
+    //mediaNoReturn();
+    //printf("%f",mediaReturn());
+    //multiploDe4();
+    //parOuImpar();
+    //somaEntreNumeros();
+    //volumeEsfera();
+    calculaPesoIdeal();
+}
